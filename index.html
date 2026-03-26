@@ -758,10 +758,10 @@
         Observaciones: c.observaciones,
         Estado: c.estado
     }));  
-        const ws = XLSX.utils.json_to_sheet(cheques);
-        const wb = XLSX.utils.book_new();
-        XLSX.utils.book_append_sheet(wb, ws, "Respaldo");
-        XLSX.writeFile(wb, "Respaldo_Cheques_Cloud.xlsx");
+    const ws = XLSX.utils.json_to_sheet(datosExportar);  // ← aquí el cambio clave
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "Respaldo");
+    XLSX.writeFile(wb, "Respaldo_Cheques_Cloud.xlsx");
     }
 
     function exportarPDF() {
